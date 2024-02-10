@@ -1,0 +1,229 @@
+
+.about-button,
+.report-button,
+.blogs-button,
+.sign-in {
+  background-color: transparent; 
+  border: none; 
+  color: black; 
+  cursor: pointer;
+  font-family: "Poppins", sans-serif; 
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+.about-button:hover,
+.report-button:hover,
+.blogs-button:hover,
+.sign-in:hover {
+  background-color: #f0f0f0; 
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.left-section {
+  width: calc(50% - 20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right-section {
+  width: calc(50% - 20px);
+}
+
+.blue-box-right {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  padding: 20px;
+}
+
+
+.man-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.buttons-container {
+  display: flex;
+}
+
+.test-button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.test-button:last-child {
+  margin-right: 0;
+}
+
+/* App.css */
+.about-us-heading {
+  font-size: 36px;
+  margin-top: 0;
+}
+
+.about-us-text {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.test-button {
+  position: relative;
+  background-color: black;
+  border-radius: 4em;
+  font-size: 16px;
+  color: white;
+  padding: 0.8em 1.8em;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s; /* Safari */
+}
+
+.test-button:hover {
+  transition-duration: 0.1s;
+  background-color: #3a3a3a;
+}
+
+.test-button:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 4em;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  box-shadow: 0 0 10px 40px white;
+}
+
+.test-button:active:after {
+  box-shadow: 0 0 0 0 white;
+  position: absolute;
+  border-radius: 4em;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  transition: 0s;
+}
+
+.test-button:active {
+  top: 1px;
+}
+
+/* App.css */
+.app {
+  margin: 0 20px; /* Add margins to the left and right of the whole webpage */
+}
+
+.blue-box {
+  display: flex;
+  background-color: #4654a3;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.left-blue-box {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+}
+
+.right-blue-box {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px; /* Limit the maximum width of the card */
+  margin-top: 20px;
+}
+
+.card-body {
+  text-align: center; /* Center the text inside the card */
+}
+
+.card-title {
+  color: #333;
+}
+
+.card-text {
+  color: #666;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-between; /* Evenly space the cards horizontally */
+  margin-top: 20px;
+}
+
+.card {
+  width: calc(
+    33.33% - 10px
+  ); /* Make the cards smaller and add space between them */
+  margin-right: 10px; /* Add space between the cards */
+}
+.card-blue-lorem {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 2000px; /* Limit the maximum width of the card */
+  padding: 20px;
+  margin: 0 auto; /* Center the card horizontally */
+  text-align: center; /* Center the text */
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-blue-lorem h5 {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.card-blue-lorem p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.blue-box-left {
+  flex: 1;
+  padding: 20px;
+}
+

@@ -1,0 +1,49 @@
+/* ReportAbuseForm.css */
+.report-abuse-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+}
+
+.logo {
+  width: 200px; /* Adjust size as needed */
+  margin-bottom: 20px;
+}
+
+.report-form {
+  width: 100%;
+  max-width: 400px; /* Adjust max width as needed */
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4654a3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3a4673;
+}
