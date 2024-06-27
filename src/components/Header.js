@@ -25,7 +25,7 @@ const Header = () => {
         <input type="text" placeholder="Search" className="search-bar" />
         <button className="about-button">About Us</button>
         <Link to="/report" className="report-button">Report Abuse</Link>
-        <Link to="/register" className="register-button">Register Sanstha</Link>
+        <Link to="/register" className="register-button">Register Organisation</Link>
       </div>
       <Link to="/success-stories" className="blogs-button">Success Stories</Link>
       <button className="sign-in">Sign In</button>
