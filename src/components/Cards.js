@@ -55,40 +55,8 @@ We provide family centered team approach to help people with debilitating illnes
             </p>
           </div>
         </motion.div>
-        <motion.div className="card"
-        whileHover={{scale : 1.2}}
-        whileTap={{scale : 1.1}}>
-          <img src={rehab1} alt="Card 1" className="card-img-top" />
-          <div className="card-body">
-            <h5 className="card-title">Simran Shri Rehab Centre </h5>
-            <p className="card-text">
-            Simran Shri Rehabilitation Centre was established with the aim of changing the lives of the people who s
-            uffer from addiction.The aim is to create a society which is free from any kind of addictions and its ill effects.
-             Through a holistic approach, we address the physical, mental, and emotional aspects of the disease.
-              Our team of qualified professionals includes psychiatrists, psychologists, sports therapists,
-               physicians, and counselors. Our treatment is modeled around the 12-Step program, and we are a Love and Care rehab center. 
-            We provide our patients a safe and secure environment to grow as they embark on their journey t
-            owards recovery to lead a sober and meaningful life.
-            </p>
-          </div>
-        </motion.div>
-        <motion.div className="card" 
-        whileHover={{scale : 1.2}}
-        whileTap={{scale : 1.1}}>
-          <img src={rehab1} alt="Card 1" className="card-img-top" />
-          <div className="card-body">
-            <h5 className="card-title">Simran Shri Rehab Centre </h5>
-            <p className="card-text">
-            Simran Shri Rehabilitation Centre was established with the aim of changing the lives of the people who s
-            uffer from addiction.The aim is to create a society which is free from any kind of addictions and its ill effects.
-             Through a holistic approach, we address the physical, mental, and emotional aspects of the disease.
-              Our team of qualified professionals includes psychiatrists, psychologists, sports therapists,
-               physicians, and counselors. Our treatment is modeled around the 12-Step program, and we are a Love and Care rehab center. 
-            We provide our patients a safe and secure environment to grow as they embark on their journey t
-            owards recovery to lead a sober and meaningful life.
-            </p>
-          </div>
-        </motion.div>
+        
+        
         
       </motion.div>
     );

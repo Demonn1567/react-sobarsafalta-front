@@ -16,6 +16,9 @@ const SwitchLayout = ({ onSwitch }) => {
       <div className="switch" data-isOn={isOn} onClick={toggleSwitch}>
         <motion.div className="handle" layout transition={spring} />
       </div>
+      <p className="attractive-text">
+        Click the button to bring a change to your life now
+      </p>
     </div>
   );
 };
