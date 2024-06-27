@@ -14,6 +14,8 @@ import GoogleMaps from "./components/GoogleMaps.js";
 import BookSession from './components/BookSession.js';
 import Home from "./components/Home.js"; 
 import SwitchLayout from "./components/SwitchLayout";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const App = () => {
   const [isSwitchOn, setIsSwitchOn] = useState(false);
@@ -45,6 +47,9 @@ const App = () => {
   }
 
   return (
+    <>
+    <Analytics/>
+    <SpeedInsights/>
     <motion.div className="app" layout>
       <motion.div className="progress-bar" style={{ scaleX }} />
       <Header />
@@ -68,6 +73,7 @@ const App = () => {
       </Routes>
       <Footer />
     </motion.div>
+    </>
   );
 };
 
