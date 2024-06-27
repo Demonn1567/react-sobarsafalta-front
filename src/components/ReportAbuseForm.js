@@ -1,11 +1,12 @@
-// ReportAbuseForm.js
 import React from "react";
-import "./ReportAbuseForm.css"; // Import CSS for the report abuse form
+import "./ReportAbuseForm.css"; 
+import logo from "./logo.jpeg"; 
+
 
 const ReportAbuseForm = () => {
   return (
     <div className="report-abuse-container">
-      <img src="/logo.png" alt="Logo" className="logo" />
+      <img src={logo} alt="Logo" className="logo" />
       <form className="report-form">
         <div className="form-group">
           <label htmlFor="name">Your Name:</label>
@@ -25,7 +26,6 @@ const ReportAbuseForm = () => {
           <label htmlFor="description">Brief Description of Incident:</label>
           <textarea id="description" name="description" required />
         </div>
-        {/* Add more form elements for other questions */}
         <button type="submit">Submit</button>
       </form>
     </div>

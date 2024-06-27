@@ -1,3 +1,17 @@
+body {
+  --accent: var(--purple);
+}
+
+.privacy-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--accent);
+  z-index: 2;
+}
+
 
 .about-button,
 .report-button,
@@ -49,6 +63,7 @@
   height: auto;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  
 }
 
 .section-title {
@@ -75,7 +90,6 @@
   margin-right: 0;
 }
 
-/* App.css */
 .about-us-heading {
   font-size: 36px;
   margin-top: 0;
@@ -136,7 +150,6 @@
   top: 1px;
 }
 
-/* App.css */
 .app {
   margin: 0 20px; /* Add margins to the left and right of the whole webpage */
 }
@@ -226,4 +239,17 @@
   flex: 1;
   padding: 20px;
 }
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: var(--red);
+  transform-origin: 0%;
+}
+
+
+
 
