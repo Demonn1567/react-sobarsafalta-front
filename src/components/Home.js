@@ -1,4 +1,3 @@
-// Home.js
 import React from "react";
 import Main from "./Main";
 import GoogleMaps from "./GoogleMaps";

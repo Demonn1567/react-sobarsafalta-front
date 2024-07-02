@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import "./Header.css";
 import logo from "./logo.jpeg"; 
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AnimatePresence, motion, useIsPresent } from "framer-motion";
 
 const Header = () => {
@@ -11,7 +11,7 @@ const Header = () => {
 
   useEffect(() => {
     if (showPrivacyScreen) {
-      setTimeout(() => setShowPrivacyScreen(false), 50); // Duration matches the animation
+      setTimeout(() => setShowPrivacyScreen(false), 50); 
     }
   }, [showPrivacyScreen]);
 
@@ -19,16 +19,20 @@ const Header = () => {
     
     <header className="header">
       <div className="logo-container">
+        <Link to="/">
         <img src={logo} alt="Logo" className="logo" />
+        </Link>
       </div>
       <div className="header-elements">
         <input type="text" placeholder="Search" className="search-bar" />
         <button className="about-button">About Us</button>
-        <Link to="/report" className="report-button">Report Abuse</Link>
-        <Link to="/register" className="register-button">Register Organisation</Link>
+        <NavLink to="/report" className="about-button">Report Abuse</NavLink>
+        <Link to="/register" className="blogs-button">Register Organisation</Link>
       </div>
       <Link to="/success-stories" className="blogs-button">Success Stories</Link>
+      <Link to="/login">
       <button className="sign-in">Sign In</button>
+      </Link>
       <AnimatePresence>
       <motion.div
         initial={{ scaleX: 1 }}

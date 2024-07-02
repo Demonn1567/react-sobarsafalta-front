@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import './register.css';
 import logo from "./logo.jpeg"; 
 
-export default function register() {
+export default function Register() {
   const [formData, setFormData] = useState({
     institutionName: '',
     email: '',
@@ -23,19 +24,25 @@ export default function register() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form Data Submitted:', formData);
+    axios.post('http://localhost:3001/register', formData)
+      .then(response => {
+        console.log('Form Data Submitted:', response.data);
+      })
+      .catch(error => {
+        console.error('There was an error submitting the form!', error);
+      });
   };
 
   return (
     <div className="App">
       <header className="App-header">
-      <div className="logo-container">
-        <img src={logo} alt="Logo" className="logo" />
-      </div>
+        <div className="logo-container">
+          <img src={logo} alt="Logo" className="logo" />
+        </div>
         <h1>Your journey to a substance-free life starts here.</h1>
       </header>
       <form className="registration-form" onSubmit={handleSubmit}>
-        <h2>Registeration</h2>
+        <h2>Registration</h2>
         <label>
           Name of the Institution:
           <input
@@ -102,12 +109,9 @@ export default function register() {
         <button type="submit">Submit</button>
       </form>
       <footer>
-        <p>© 2024 SoberSafalta. All rights reserved.</p>
         <nav>
-          <a href="#terms">Terms of Service</a> | <a href="#privacy">Privacy Policy</a> | <a href="#contact">Contact Us</a>
         </nav>
       </footer>
     </div>
   );
 }
-

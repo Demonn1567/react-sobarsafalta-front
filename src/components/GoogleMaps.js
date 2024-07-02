@@ -17,7 +17,8 @@ function GoogleMaps() {
         <div className="blue-box-right">
             <motion.div className="card card-blue-lorem"
             whileHover={{scale : 1.2}}
-            whileTap={{scale : 1.1}}>
+            whileTap={{scale : 1.1}}
+            >
               <h5></h5>
               <p>
               Our website seamlessly integrates Google Maps to provide users with an intuitive way to locate nearby rehab centers.

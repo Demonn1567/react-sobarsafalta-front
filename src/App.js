@@ -16,6 +16,8 @@ import Home from "./components/Home.js";
 import SwitchLayout from "./components/SwitchLayout";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import Login from "./components/Login.js";
+import Registerr from "./components/registeraccount.js";
 
 const App = () => {
   const [isSwitchOn, setIsSwitchOn] = useState(false);
@@ -70,6 +72,8 @@ const App = () => {
         <Route path="/report" element={<ReportAbuseForm />} />
         <Route path="/success-stories" element={<SuccessStories />} />
         <Route path="/booksession" element={<BookSession />} />
+        <Route path="/login" element = {<Login/>}/>
+        <Route path="/registeraccount" element = {<Registerr/>}/>
       </Routes>
       <Footer />
     </motion.div>
