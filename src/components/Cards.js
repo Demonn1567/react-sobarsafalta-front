@@ -4,7 +4,7 @@ import "../App.css";
 import rehab1 from "../assets/rehab1.jpg";
 import rehab2 from "../assets/rehab2.jpg";
 import rehab3 from "../assets/rehab3.jpg";
-import rehab4 from "../assets/rehab4.jpeg"
+import rehab4 from "../assets/rehab4.jpeg"; // Ensure this import is correct
 
 const cards = [
   {
@@ -22,7 +22,11 @@ const cards = [
     title: "Lifeline Foundations",
     text: "Lifeline Foundations is helping the society in its campaign against drug addiction. We are a structured and reputed rehabilitation centre in Chandigarh. Our Nasha Mukti Kendra in Chandigarh is fully dedicated to its aim of serving the society with effective health solutions. Likewise, we have adopted unique and advanced drug rehabilitation therapies. At Lifeline Foundations, patients will get fully-fledged medical assistance and can get rid of this dreadful evil of drug addiction. Visit us today and start making efforts to get your life as it was earlier. Moreover, we also have branches in many other cities like Nasha Mukti Kendra in Patiala, Nasha Mukti Kendra in Jalandhar, and Nasha Mukti Kendra in Ludhiana as well.",
   },
-  
+  {
+    img: rehab4,
+    title: "AAS Rehab Centre",
+    text: "AAS - The Rehabilitation Centre is premier state of the art rehabilitation centre that was established in 2014. In the years since its establishment, we have successfully treated over 800 patients in past 7 years. We have built our name in the field of patient care, rehabilitation programmes and world class facilities.",
+  },
 ];
 
 function Cards() {
@@ -30,12 +34,12 @@ function Cards() {
 
   useEffect(() => {
     controls.start({
-      x: ["0%", "-100%"],
+      x: ["0%", "-50%"],
       transition: {
         x: {
           repeat: Infinity,
           repeatType: "loop",
-          duration: 20,
+          duration: 30,
           ease: "linear",
         },
       },
