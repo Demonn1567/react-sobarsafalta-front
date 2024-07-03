@@ -8,13 +8,18 @@ import { AnimatePresence, motion, useIsPresent } from 'framer-motion';
 const Header = () => {
   const isPresent = useIsPresent();
   const [showPrivacyScreen, setShowPrivacyScreen] = useState(true);
+  const [username, setUsername] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (showPrivacyScreen) {
-      setTimeout(() => setShowPrivacyScreen(false), 50); 
+    const storedUsername = localStorage.getItem('username');
+    if (storedUsername) {
+      setUsername(storedUsername);
     }
-  }, [showPrivacyScreen]);
+    if (showPrivacyScreen) {
+      setTimeout(() => setShowPrivacyScreen(false), 50);
+    }
+  }, [showPrivacyScreen, localStorage.getItem('username')]);
 
   const handleSelect = (eventKey) => {
     navigate('/login', { state: { loginType: eventKey }, replace: true });
@@ -22,6 +27,13 @@ const Header = () => {
 
   const handleNavigate = (path) => {
     navigate(path, { replace: true });
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('username');
+    setUsername(null);
+    navigate('/');
   };
 
   return (
@@ -38,15 +50,22 @@ const Header = () => {
         <button className="about-button" onClick={() => handleNavigate('/register')}>Register Organisation</button>
       </div>
       <button className="blogs-button" onClick={() => handleNavigate('/success-stories')}>Success Stories</button>
-      <Dropdown onSelect={handleSelect} className="sign-in-dropdown">
-        <Dropdown.Toggle variant="" id="dropdown-basic">
-          Sign In
-        </Dropdown.Toggle>
-        <Dropdown.Menu>
-          <Dropdown.Item eventKey="Rehab Center">Rehab Center</Dropdown.Item>
-          <Dropdown.Item eventKey="User">User</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
+      {username ? (
+        <div className="user-info">
+          <span>Welcome, {username}</span>
+          <button className="about-button" onClick={handleLogout}>Logout</button>
+        </div>
+      ) : (
+        <Dropdown onSelect={handleSelect} className="sign-in-dropdown">
+          <Dropdown.Toggle variant="" id="dropdown-basic">
+            Sign In
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            <Dropdown.Item eventKey="Rehab Center">Rehab Center</Dropdown.Item>
+            <Dropdown.Item eventKey="User">User</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+      )}
       <AnimatePresence>
         <motion.div
           initial={{ scaleX: 1 }}

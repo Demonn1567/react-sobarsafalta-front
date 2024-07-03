@@ -1,19 +1,18 @@
-// Login.js
 import React, { useState } from 'react';
-import { Container, Card, Form, Button } from 'react-bootstrap';
+import { Container, Card, Form, Button, Alert } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
-import { useNavigate, Link, useLocation } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
   const navigate = useNavigate();
-  const location = useLocation();
-  const loginType = location.state?.loginType || 'User';
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setError('');
     try {
       const response = await axios.post('http://127.0.0.1:8000/api/token/', {
         email,
@@ -21,9 +20,11 @@ const Login = () => {
       });
       console.log(response.data);
       localStorage.setItem('token', response?.data?.access);
-      navigate('/');
+      localStorage.setItem('username', response?.data?.user?.username);
+      navigate('/'); // Navigate to the main page
     } catch (error) {
       console.error('There was an error logging in', error);
+      setError('Invalid email or password. Please try again.');
     }
   };
 
@@ -34,7 +35,8 @@ const Login = () => {
     >
       <Card style={{ width: '30rem', padding: '2rem', borderRadius: '1rem', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' }}>
         <Card.Body>
-          <Card.Title className="text-center mb-4">{loginType} Login</Card.Title>
+          <Card.Title className="text-center mb-4">User Login</Card.Title>
+          {error && <Alert variant="danger" className="mt-3">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="formBasicEmail" className="mb-3">
               <Form.Label>Email address</Form.Label>
