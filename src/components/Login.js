@@ -18,7 +18,7 @@ const Login = () => {
         email,
         password,
       });
-      console.log(response.data);
+      
       localStorage.setItem('token', response?.data?.access);
       localStorage.setItem('username', response?.data?.user?.username);
       navigate('/'); // Navigate to the main page
