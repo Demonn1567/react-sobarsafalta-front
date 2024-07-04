@@ -33,6 +33,19 @@ const formSchema = new mongoose.Schema({
 
 const Form = mongoose.model('Form', formSchema);
 
+// Define a schema and model for your session booking form data
+const sessionSchema = new mongoose.Schema({
+  name: String,
+  phone: String,
+  email: String,
+  city: String,
+  sessionType: String,
+  message: String,
+  additionalDetails: String,
+});
+
+const Session = mongoose.model('Session', sessionSchema);
+
 // Endpoint to handle registration form submission
 app.post('/register', async (req, res) => {
   try {
@@ -41,6 +54,17 @@ app.post('/register', async (req, res) => {
     res.status(200).send('Form data saved successfully');
   } catch (error) {
     res.status(500).send('Error saving form data');
+  }
+});
+
+// Endpoint to handle session booking form submission
+app.post('/book-session', async (req, res) => {
+  try {
+    const newSession = new Session(req.body);
+    await newSession.save();
+    res.status(200).send('Session data saved successfully');
+  } catch (error) {
+    res.status(500).send('Error saving session data');
   }
 });
 
