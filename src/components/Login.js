@@ -21,7 +21,7 @@ const Login = () => {
       
       localStorage.setItem('token', response?.data?.access);
       localStorage.setItem('username', response?.data?.user?.username);
-      navigate('/'); // Navigate to the main page
+      navigate('/'); 
     } catch (error) {
       console.error('There was an error logging in', error);
       setError('Invalid email or password. Please try again.');
