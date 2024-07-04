@@ -9,6 +9,7 @@ const Registerr = () => {
   const [username, setUsername] = useState('');
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
+  const [success, setSuccess] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -20,6 +21,8 @@ const Registerr = () => {
         password,
       });
       console.log(response.data);
+      setSuccess(true);
+      setTimeout(() => setSuccess(false), 3000); // Hide success message after 3 seconds
     } catch (error) {
       console.error("There was an error registering", error);
     }
@@ -33,6 +36,11 @@ const Registerr = () => {
       <Card style={{ width: '30rem', padding: '2rem', borderRadius: '1rem', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' }}>
         <Card.Body>
           <Card.Title className="text-center mb-4">Register</Card.Title>
+          {success && (
+            <div className="success-message">
+              Registration successful! Redirecting...
+            </div>
+          )}
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="formEmail" className="mb-3">
               <Form.Label>Email address</Form.Label>
@@ -73,7 +81,7 @@ const Registerr = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Group>
-
+          
             <Button variant="primary" type="submit" className="w-100 mt-3">
               Register
             </Button>
