@@ -6,12 +6,10 @@ const cors = require('cors');
 const app = express();
 const port = 3001;
 
-// Middleware
 app.use(bodyParser.json());
 app.use(cors());
 
-// MongoDB connection
-const mongoURI = 'mongodb+srv://ksharma8be23:p86z8U3SJYPMXI8r@cluster0.6ooff8v.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0';
+const mongoURI = 'mongodb+srv://krish:Canada1234%40@cluster0.fstprdp.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0';
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
@@ -20,7 +18,6 @@ db.once('open', () => {
   console.log('Connected to MongoDB');
 });
 
-// Define a schema and model for your registration form data
 const formSchema = new mongoose.Schema({
   institutionName: String,
   email: String,
@@ -33,7 +30,6 @@ const formSchema = new mongoose.Schema({
 
 const Form = mongoose.model('Form', formSchema);
 
-// Define a schema and model for your session booking form data
 const sessionSchema = new mongoose.Schema({
   name: String,
   phone: String,
@@ -46,7 +42,14 @@ const sessionSchema = new mongoose.Schema({
 
 const Session = mongoose.model('Session', sessionSchema);
 
-// Endpoint to handle registration form submission
+const reportAbuseSchema = new mongoose.Schema({
+  name: String,
+  phone: String,
+  description: String,
+});
+
+const ReportAbuse = mongoose.model('ReportAbuse', reportAbuseSchema);
+
 app.post('/register', async (req, res) => {
   try {
     const newForm = new Form(req.body);
@@ -57,7 +60,6 @@ app.post('/register', async (req, res) => {
   }
 });
 
-// Endpoint to handle session booking form submission
 app.post('/book-session', async (req, res) => {
   try {
     const newSession = new Session(req.body);
@@ -65,6 +67,16 @@ app.post('/book-session', async (req, res) => {
     res.status(200).send('Session data saved successfully');
   } catch (error) {
     res.status(500).send('Error saving session data');
+  }
+});
+
+app.post('/report-abuse', async (req, res) => {
+  try {
+    const newReportAbuse = new ReportAbuse(req.body);
+    await newReportAbuse.save();
+    res.status(200).send('Report abuse data saved successfully');
+  } catch (error) {
+    res.status(500).send('Error saving report abuse data');
   }
 });
 

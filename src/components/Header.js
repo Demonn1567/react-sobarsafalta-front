@@ -45,9 +45,11 @@ const Header = () => {
       </div>
       <div className="header-elements">
         <input type="text" placeholder="Search" className="search-bar" />
+        
         <button className="about-button" onClick={() => handleNavigate('/about')}>About Us</button>
         <button className="report-button" onClick={() => handleNavigate('/report')}>Report Abuse</button>
         <button className="about-button" onClick={() => handleNavigate('/register')}>Register Organisation</button>
+        
       </div>
       <button className="blogs-button" onClick={() => handleNavigate('/success-stories')}>Success Stories</button>
       {username ? (

@@ -61,7 +61,16 @@ function BookSession() {
         .then(response => {
           console.log('Form Data Submitted:', response.data);
           setSuccess(true);
-          setTimeout(() => setSuccess(false), 3000); // hide success message after 3 seconds
+          setTimeout(() => setSuccess(false), 3000); 
+          setFormData({ 
+            name: '',
+            phone: '',
+            email: '',
+            city: '',
+            sessionType: '',
+            message: '',
+            additionalDetails: '',
+          });
         })
         .catch(error => {
           console.error('There was an error submitting the form!', error);
